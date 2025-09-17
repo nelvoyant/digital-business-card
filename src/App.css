@@ -1,0 +1,83 @@
+/* This is a global style sheet */
+
+body {
+  background-color: #f0f2f5; /* Light grey background */
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Styles for the business card itself */
+.card {
+  background-color: white;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 350px;
+  overflow: hidden; /* Ensures the image respects the rounded corners */
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* Makes the image a circle */
+  border: 3px solid #0077b5; /* A nice border color */
+  margin-bottom: 15px;
+}
+
+.card-content h2 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.card-content p {
+  color: #666;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: white;
+  background-color: #0077b5;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+  background-color: #005582; /* Darker shade on hover */
+}
+
+.fun-fact-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.fun-fact-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.fun-fact-section button:hover {
+  background-color: #218838;
+}
+
+.fun-fact {
+  margin-top: 15px;
+  color: #333;
+  font-style: italic;
+}
