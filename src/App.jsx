@@ -1,9 +1,21 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import LoginButton from "./components/LoginButton.jsx";
 
+const GITHUB_CLIENT_ID = import.meta.env.VITE_GITHUB_CLIENT_ID;
+const GITHUB_REDIRECT_URI = import.meta.env.VITE_GITHUB_REDIRECT_URI;
+
+const handleLogin = () => {
+  const url = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${GITHUB_REDIRECT_URI}&scope=user:read`;
+  window.location.href = url;
+};
+
+// Inside your component's JSX
+<button onClick={handleLogin}>Login with GitHub</button>;
 function App() {
   const [messages, setMessages] = useState([]);
   const [form, setForm] = useState({ name: "", message: "" });
+  const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   // This function fetches messages from our API
@@ -18,6 +30,15 @@ function App() {
   // useEffect runs once when the component first loads.
   // It's the perfect place to fetch initial data.
   useEffect(() => {
+    const checkUser = async () => {
+      const res = await fetch("/api/user");
+      const data = await res.json();
+      if (data.isAuthenticated) {
+        setUser(data.user);
+      }
+      setIsLoading(false);
+    };
+    checkUser();
     fetchMessages();
   }, []);
 
@@ -44,6 +65,7 @@ function App() {
   return (
     <div className="app-container">
       <h1>Cloudflare D1 Guestbook</h1>
+      <LoginButton />
       <form onSubmit={handleSubmit} className="message-form">
         <input
           type="text"
