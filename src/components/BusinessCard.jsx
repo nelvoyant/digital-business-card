@@ -46,9 +46,7 @@ function BusinessCard() {
 
         {/* This is conditional rendering. The <p> tag will ONLY be rendered IF showFact is true. */}
         {showFact && (
-          <p className="fun-fact">
-            Fun Fact: I can normalize a database schema in my sleep.
-          </p>
+          <p className="fun-fact">Fun Fact: I say 'Sequel' not 'Squeal'.</p>
         )}
       </div>
       {/* --- END NEW SECTION --- */}
