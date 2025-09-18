@@ -1,0 +1,9 @@
+{
+  "d1_databases": [
+    {
+      "binding": "guestbook_database",
+      "database_name": "guestbook-database",
+      "database_id": "c91c90a3-4c41-4a85-bd77-7af9c6f39839"
+    }
+  ]
+}
